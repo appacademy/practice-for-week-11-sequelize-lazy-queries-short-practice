@@ -12,6 +12,6 @@ module.exports = {
     storage: process.env.DB_TEST_FILE,
     dialect: "sqlite",
     seederStorage: "sequelize",
-    logging: false
+    // logging: false
   },
 };

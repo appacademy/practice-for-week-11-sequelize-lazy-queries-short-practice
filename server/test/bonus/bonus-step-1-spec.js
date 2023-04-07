@@ -1,17 +1,13 @@
-const chai = require("chai");
-let chaiHttp = require("chai-http");
-let chaiJsonSchema = require('chai-json-schema');
-let server = require("../../app");
-chai.use(chaiHttp);
-chai.use(chaiJsonSchema);
+const { setupBefore, setupChai, removeTestDB } = require('../utils/test-utils');
+const chai = setupChai();
 const expect = chai.expect;
-const { resetDB, seedAllDB } = require('../utils/test-utils');
+const chaiJsonSchema = require('chai-json-schema');
+chai.use(chaiJsonSchema);
 
 describe('Bonus Step #1 Specs', () => {
-  before(async function () {
-    await resetDB();
-    return seedAllDB();
-  });
+  let DB_TEST_FILE, SERVER_DB_TEST_FILE, models, server;
+  before(async () => ({ server, models, DB_TEST_FILE, SERVER_DB_TEST_FILE } = await setupBefore(__filename)));
+  after(async () => await removeTestDB(DB_TEST_FILE));
 
   describe('GET /musicians/:musicianId', () => {
     it('GET /musicians/1 returns data about the musician with an id of 1 and their respective instruments', async () => {

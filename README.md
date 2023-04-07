@@ -146,5 +146,13 @@ Run `npm test` to make sure all the tests still pass.
 Congratulations! You are now able to utilize lazy eager loading of associated
 data with **Sequelize**.
 
+## Submission
+
+Submit your work.
+
+1. Delete the `node_modules` folder in the __server__ directory
+2. Zip up the project folder
+3. Submit the zip file
+
 [band-musician-instrument-db-schema]: https://appacademy-open-assets.s3.us-west-1.amazonaws.com/Modular-Curriculum/content/week-11/practices/band-musician-instrument-db-schema.png
 [band-musician-instrument-db-diagram-info]: https://appacademy-open-assets.s3.us-west-1.amazonaws.com/Modular-Curriculum/content/week-11/practices/band-musician-instrument-db-diagram-info.txt

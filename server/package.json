@@ -7,14 +7,15 @@
     "start": "node app.js",
     "dev": "nodemon app.js",
     "reset-files": "node test/utils/reset-files.js",
-    "test": "DB_FILE=test/test.db mocha --timeout 5000",
-    "test-with-json": "npm run reset-files && DB_FILE=test/test.db mocha --reporter json --timeout 10000"
+    "test": "NODE_ENV=test mocha --timeout 5000",
+    "test-with-json": "NODE_ENV=test mocha --reporter json --timeout 10000"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "chai": "^4.3.7",
+    "chai-as-promised": "^7.1.1",
     "chai-http": "^4.3.0",
     "chai-json-schema": "^1.5.1",
     "dotenv": "^10.0.0",
